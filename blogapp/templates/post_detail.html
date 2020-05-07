@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block content %}
+<div class="container">
+  <h1 class="mt-4 mb-3">Blog Home
+    <small>Subheading</small>
+  </h1>
+
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="{% url 'home'%}">Home</a>
+    </li>
+    <li class="breadcrumb-item active">{{object.title}}</li>
+  </ol>
+
+
+        <!-- Post Content Column -->
+        <div class="col-lg-8">
+  
+          <!-- Preview Image -->
+          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+  
+          <hr>
+  
+          <!-- Date/Time -->
+          <p>Posted on January 1, 2017 at 12:00 PM</p>
+  
+          <hr>
+              <cite title="Source Title">{{object.title}}</cite>
+  
+          <p>{{object.body}}</p>
+  
+          <hr>
+  
+</div>
+<p><a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a></p>
+<p><a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a></p>
+
+{%endblock%}
